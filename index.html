@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mensagem de Amor</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div id="header-plugin">
+    <div class="bg_heart"></div>
+    <div class="container d-flex align-items-center justify-content-center vh-100">
+      <div class="content text-center">
+        <h1 class="message">Você quer ser minha eterna namorada?</h1>
+        <div class="buttons">
+          <button type="button" class="btn btn-love" data-toggle="modal" data-target="#exampleModal">
+            Sim hihihi
+          </button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-3" id="exampleModalLabel">Para Letícia Cajaty</h1>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="container-fluid">
+                    <div class="row">
+      <div class="col-md-6 ms-auto">Obrigado por me fazer um homem melhor a cada dia com seu amor,
+         carinho e paciência. Eu te amo mucho mucho e quero passar o resto da mi vida ao seu lado.
+          Feliz 5 meses minha princesa hihihihi &#x2764; &#x2764;</div>
+              
+              <div class="col-md-6 ms-auto">
+                <img src="./fotor-ai.jpg" alt="foto nossa">
+              </div>
+              </div>
+                  </div>
+                  
+                </div>
+               
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-danger btn-escape btn-jump"  >Não &#x1F622;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./escape-buttons.js"></script>
+  <script>
+    var love = setInterval(function() {
+      var r_num = Math.floor(Math.random() * 40) + 1;
+      var r_size = Math.floor(Math.random() * 65) + 10;
+      var r_left = Math.floor(Math.random() * 100) + 1;
+      var r_bg = Math.floor(Math.random() * 25) + 100;
+      var r_time = Math.floor(Math.random() * 5) + 5;
+
+      $('.bg_heart').append("<div class='heart' style='width:" + r_size + "px;height:" + r_size + "px;left:" + r_left + "%;-webkit-animation:love " + r_time + "s ease;-moz-animation:love " + r_time + "s ease;-ms-animation:love " + r_time + "s ease;animation:love " + r_time + "s ease'></div>");
+
+      $('.bg_heart').append("<div class='heart' style='width:" + (r_size - 10) + "px;height:" + (r_size - 10) + "px;left:" + (r_left + r_num) + "%;-webkit-animation:love " + (r_time + 5) + "s ease;-moz-animation:love " + (r_time + 5) + "s ease;-ms-animation:love " + (r_time + 5) + "s ease;animation:love " + (r_time + 5) + "s ease'></div>");
+
+      $('.heart').each(function() {
+          var top = $(this).css("top").replace(/[^-\d\.]/g, '');
+          var width = $(this).css("width").replace(/[^-\d\.]/g, '');
+          if (top <= -100 || width >= 150) {
+              $(this).detach();
+          }
+      });
+    }, 500);
+  </script>
+</body>
+</html>

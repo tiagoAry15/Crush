@@ -1,0 +1,163 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  background: rgb(135, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(135, 0, 0, 1) 0%,
+    rgba(227, 0, 0, 1) 59%,
+    rgba(255, 19, 172, 1) 100%
+  );
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.message {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.btn-love {
+    color: #fff; 
+    background-color: #ff9999; 
+    border-color: #ff9999; 
+}
+.btn-danger{
+  background-color: black;
+}
+.btn-love:hover, 
+.btn-love:focus, 
+.btn-love:active, 
+.btn-love.active, 
+.open > .dropdown-toggle.btn-love {
+    color: #fff; 
+    background-color: #ff8080; 
+    border-color: #ff8080; 
+}
+
+.btn-love:active, 
+.btn-love.active, 
+.open > .dropdown-toggle.btn-love {
+    background-image: none; 
+}
+
+.btn-love.disabled, 
+.btn-love[disabled], 
+fieldset[disabled] .btn-love, 
+.btn-love.disabled:hover, 
+.btn-love[disabled]:hover, 
+fieldset[disabled] .btn-love:hover, 
+.btn-love.disabled:focus, 
+.btn-love[disabled]:focus, 
+fieldset[disabled] .btn-love:focus, 
+.btn-love.disabled:active, 
+.btn-love[disabled]:active, 
+fieldset[disabled] .btn-love:active, 
+.btn-love.disabled.active, 
+.btn-love[disabled].active, 
+fieldset[disabled] .btn-love.active {
+    background-color: #ff9999; 
+    border-color: #ff9999; 
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h1  {
+  font-size: 1.5rem;
+}
+
+.modal-content {
+  color: black;
+  text-align:justify;
+ background-image: url(lovebg.jpeg);
+ background-size: cover;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.bg_heart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.heart {
+  position: absolute;
+  top: -50%;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(0deg);
+  /* Add a color to the heart */
+  width: 50px; /* Add a size to the heart */
+  height: 50px; /* Add a size to the heart */
+  animation: love 2s infinite; /* Here we're applying the animation */
+}
+
+.heart::before, .heart::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 52px;
+  height: 80px;
+  border-radius: 50px 50px 0 0; /* cria uma forma de semicírculo */
+  background: red;
+}
+
+.heart::before {
+  left: 50px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart::after {
+  left: 0px;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+@-webkit-keyframes love {
+  0% {
+    top: 110%;
+  }
+  100% {
+    top: -50%;
+  }
+}
+@-moz-keyframes love {
+  0% {
+    top: 110%;
+  }
+  100% {
+    top: -50%;
+  }
+}
+@-ms-keyframes love {
+  0% {
+    top: 110%;
+  }
+  100% {
+    top: -50%;
+  }
+}
+@keyframes love {
+  0% {
+    top: 110%;
+  }
+  100% {
+    top: -50%;
+  }
+}
